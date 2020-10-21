@@ -1,0 +1,14 @@
+<h4>Exercise 2-1: Favorite Component</h4>
+
+<i-bs 
+  [name]="isFavorite ? 'star-fill' : 'star'"
+  (click)="toggleFavorite()"
+  width="2em" 
+  height="2em">
+</i-bs>
+<hr />
+
+<h4>Exercise 2-2: TitleCase</h4>
+<input [(ngModel)]="titleCase" type="text" />
+<br />
+<p>{{ titleCase | two }}</p>
