@@ -1,0 +1,11 @@
+<h4>Exercise 3: LikeComponent</h4>
+
+<i-bs
+  name="heart-fill"
+  [class.active]="isLiked"
+  (click)="toggleLike()"
+  width="2em" 
+  height="2em">
+</i-bs>
+<span>{{ likesCount }}</span>
+<p>Learned: passing data to components</p>

@@ -1,0 +1,14 @@
+i-bs {
+    color: #ccc;
+    cursor: pointer;
+    margin: 0.5em;
+}
+
+.active {
+    color: deeppink;
+}
+
+span {
+    font-size: 1.5em;
+    margin: 0.5em;
+}
