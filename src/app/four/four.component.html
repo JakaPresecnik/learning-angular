@@ -1,0 +1,5 @@
+<h4 class='collapsed' (click)="toggleColapse()">{{ title }}
+    <i-bs [name]="isColapse ? 'chevron-compact-down' : 'chevron-compact-up'">
+</i-bs>
+</h4>
+<ng-content *ngIf='!isColapse'></ng-content>

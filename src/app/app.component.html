@@ -38,4 +38,25 @@
 <div class="exercise">
   <three [isLiked]="liked.isLiked" [likesCount]="liked.likesCount"></three>
 </div>
+
+<h2>Directives</h2>
+<ul>
+  <li><code>*ngIf</code><a href="https://angular.io/api/common/NgIf"> See link</a></li>
+  <li><code>[ngSwitch]="viewMode"</code> to initialize switch on a content</li>
+  <ul>
+    <li><code>*ngSwitchCase="'map'"</code> to check the value to display a certain content</li>
+    <li><code>*ngSwitchDefault</code> use to display other cases</li>
+  </ul>
+  <li><code>*ngFor="let item of items; index as i"</code> to get the index <a href="https://angular.io/api/common/NgForOf">link</a></li>
+  <ul>
+    <li>use <code>trackBy: trackByIdFn</code> to track items by Ids</li>
+  </ul>
+  <li><code>[ngClass]="&#123;'some-class': boolean&#125;</code></li>
+  <li><code>ng g directive directive-name</code></li>
+</ul>
+<div class="exercise">
+  <four title="Exercise 4: Zippy">
+    <p>Learned: ng-content</p>
+  </four>
+</div>
 <router-outlet></router-outlet>

@@ -9,7 +9,7 @@ export class TwoPipe implements PipeTransform {
     if(!value){
       return null;
     }
-    const prepositions: string[] = ['the', 'in', 'of'];
+    const prepositions: string[] = ['the', 'in', 'of', 'on', 'from'];
 
     let splitString: string[] = value.toLowerCase().split(" ");
 

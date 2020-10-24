@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
-import { Star, StarFill, HeartFill, Heart } from 'ngx-bootstrap-icons';
+import { Star, StarFill, HeartFill, Heart, ChevronCompactDown, ChevronCompactUp } from 'ngx-bootstrap-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,12 +12,15 @@ import { TwoComponent } from './two/two.component';
 import { TwoPipe } from './two.pipe';
 import { FormsModule } from '@angular/forms';
 import { ThreeComponent } from './three/three.component';
+import { FourComponent } from './four/four.component';
 
 const icons = {
   Star,
   StarFill,
   HeartFill,
-  Heart 
+  Heart,
+  ChevronCompactDown,
+  ChevronCompactUp
 };
 
 @NgModule({
@@ -26,7 +29,8 @@ const icons = {
     OneComponent,
     TwoComponent,
     TwoPipe,
-    ThreeComponent
+    ThreeComponent,
+    FourComponent
   ],
   imports: [
     BrowserModule,
