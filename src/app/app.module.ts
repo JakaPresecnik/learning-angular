@@ -13,6 +13,7 @@ import { TwoPipe } from './two.pipe';
 import { FormsModule } from '@angular/forms';
 import { ThreeComponent } from './three/three.component';
 import { FourComponent } from './four/four.component';
+import { FiveComponent } from './five/five.component';
 
 const icons = {
   Star,
@@ -30,7 +31,8 @@ const icons = {
     TwoComponent,
     TwoPipe,
     ThreeComponent,
-    FourComponent
+    FourComponent,
+    FiveComponent
   ],
   imports: [
     BrowserModule,

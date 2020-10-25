@@ -1,0 +1,50 @@
+<h4>Exercise 5: Create Course Form</h4>
+<form #f="ngForm">
+    <div class="form-group">
+        <label for="courseName">Course Name</label>
+        <input 
+            ngModel
+            name="courseName"
+            #courseName="ngModel"
+            required
+            minlength="5"
+            [ngClass]="{'warning': courseName.touched && courseName.invalid}"
+            type="text" 
+            id="courseName"
+            class="form-control">
+        <div *ngIf="courseName.touched && courseName.invalid" class="alert alert-danger">
+            <p *ngIf="courseName.errors.required">Name is required!</p>
+            <p *ngIf="courseName.errors.minlength">Name should be minimum {{ courseName.errors.minlength.requiredLength }} characters!</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select
+             ngModel
+             name="category"
+             #category="ngModel"
+             required
+             id="category" 
+             [ngClass]="{'warning': category.touched && category.invalid}"
+             class="form-control">
+             <option value="" disabled></option>
+            <option *ngFor="let i of categories" [value]="i.id">{{ i.name }}</option>
+        </select>
+        <div *ngIf="category.touched && category.invalid" class="alert alert-danger">
+            <p>Category is required!</p>
+        </div>
+    </div>
+    <div class="form-check">
+        <input 
+            ngModel
+            name="guarantee"
+            #guarantee="ngModel"
+            id="guarantee" 
+            type="checkbox" 
+            class="form-check-input">
+        <label for="guarantee" class="form-check-label">30-day money-back-guarantee</label>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    <div>{{ f.value | json }}</div>
+</form>
