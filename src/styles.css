@@ -10,3 +10,8 @@
 body {
     padding: 2em;
 }
+
+pre {
+    background-color: lightpink;
+    border-radius: 3px;
+}

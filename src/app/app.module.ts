@@ -10,10 +10,11 @@ import { AppComponent } from './app.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
 import { TwoPipe } from './two.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThreeComponent } from './three/three.component';
 import { FourComponent } from './four/four.component';
 import { FiveComponent } from './five/five.component';
+import { SixComponent } from './six/six.component';
 
 const icons = {
   Star,
@@ -32,13 +33,15 @@ const icons = {
     TwoPipe,
     ThreeComponent,
     FourComponent,
-    FiveComponent
+    FiveComponent,
+    SixComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxBootstrapIconsModule.pick(icons),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     OneService

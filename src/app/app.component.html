@@ -1,4 +1,4 @@
-<h2>Angular Fundamentals</h2>
+<!-- <h2>Angular Fundamentals</h2>
 <div class="exercise">
   <one></one>
 </div>
@@ -58,7 +58,7 @@
   <four title="Exercise 4: Zippy">
     <p>Learned: ng-content</p>
   </four>
-</div>
+</div> -->
 <h2>Template-driven Forms</h2>
 <ul>
   <li><code>ngModel name="controlName"</code> in input template driven aproach</li>
@@ -69,5 +69,34 @@
 </ul>
 <div class="exercise">
   <five></five>
+</div>
+<h2>Reactive Forms</h2>
+<ul>
+  <li>(register ReactiveFormsModule): <code><pre>form = new FormGroup(&#123;
+    username: new FormControl()  
+    &#125;)</pre></code></li>
+  <ul>
+    <li><code>[formGroup]="form"</code> add to form tag inside .html</li>
+    <li><code>formControlName="username"</code> add to input tag inside .html</li>
+  </ul>
+  <li>inside formControl add validators: <code>('', Validators.<i>val</i>)</code>(3. param is Async</li>
+  <ul>
+    <li><code>*ngIf="form.get('username').touch"</code>...</li>
+  </ul>
+  <li>create a file with validators(class) and add: 
+    <code><pre>static methodName(control: AbstractControl) : ValidationErrors | null &#123;
+      if(control.value as string).indexOf(' ' >= 0) &#123;
+          return &#123; methodCheck: true &#125;
+        &#125;else return null
+      &#125;</pre></code></li>
+  <li>for async replace with <code>Promise&lt;Validation Errors | null &gt;</code></li>
+  <li>in validator class add: <code>
+    <pre>return new Promise((resolve, reject) => &#123;
+        function that returns resolve(&#123;methodCheck: true&#125;)or else null
+      &#125;);</pre></code></li>
+      <li><code>*ngIf="username.pending"</code> use to display a div while async loading</li>
+</ul>
+<div class="exercise">
+  <six></six>
 </div>
 <!-- <router-outlet></router-outlet> -->
