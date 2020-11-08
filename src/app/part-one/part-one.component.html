@@ -1,0 +1,39 @@
+<div class="exercise">
+  <one></one>
+</div>
+
+<h2>Displaying Data and Handling Events</h2>
+<p>Installed bootstrap and bootstrap-icons</p>
+<ul>
+  <li><code>[class.active]="boolean"</code> for class binding</li>
+  <li><code>(click)="myFunction(<i>$event</i>)"</code> for event binding</li>
+  <ul>
+    <li><code>$event.stopPropagation()</code> inside <i>myFunction</i> to stop event bubbling</li>
+    <li>*<code>$event.target.value</code>* inside <i>myFunction</i> to get an input value</li>
+  </ul>
+  <li>instead of * use <code>#name</code> in input and pass <code>name.value</code> into myFunction</li>
+  <li>For two way binding (for form inputs):</li>
+  <ul>
+    <li>use <code>[(ngModel)]="name"</code></li>
+    <li>and register <code>FormsModule</code> in <i>module.ts</i> inside <code>imports</code></li>
+  </ul>
+  <li><code>ng g pipe pipeName</code> for costum pipes</li>
+  <li><code>if(!value) return null</code> use inside transform, add <code>value.<i>something</i></code> after</li>
+</ul>
+<div class="exercise">
+  <two></two>
+</div>
+
+<h2>Building Re-usable Components</h2>
+<ul>
+  <li><code>@Input() prop: boolean;</code> use this decorator to bind properties</li>
+  <li><code>@Output() change = new EventEmitter()</code> use output prop to raise event in this</li>
+  <ul>
+    <li><code>this.change.emit(<i>this.prop</i>)</code> inside a click or other function in that comp</li>
+  </ul>
+  <li><code>&lt;ng-content select=".class"&gt;&lt;/ng-content&gt;</code> in child comp, use class in app.comp</li>
+  <li><code>&lt;ng-container"&gt;&lt;/ng-container&gt;</code> use to display without <code>div</code>,<code>p</code>...</li>
+</ul>
+<div class="exercise">
+  <three [isLiked]="liked.isLiked" [likesCount]="liked.likesCount"></three>
+</div>

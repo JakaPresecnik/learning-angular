@@ -15,6 +15,9 @@ import { ThreeComponent } from './three/three.component';
 import { FourComponent } from './four/four.component';
 import { FiveComponent } from './five/five.component';
 import { SixComponent } from './six/six.component';
+import { PartOneComponent } from './part-one/part-one.component';
+import { PartTwoComponent } from './part-two/part-two.component';
+import { ErrorComponent } from './error/error.component';
 
 const icons = {
   Star,
@@ -34,7 +37,10 @@ const icons = {
     ThreeComponent,
     FourComponent,
     FiveComponent,
-    SixComponent
+    SixComponent,
+    PartOneComponent,
+    PartTwoComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,60 @@
+<h2>Directives</h2>
+<ul>
+  <li><code>*ngIf</code><a href="https://angular.io/api/common/NgIf"> See link</a></li>
+  <li><code>[ngSwitch]="viewMode"</code> to initialize switch on a content</li>
+  <ul>
+    <li><code>*ngSwitchCase="'map'"</code> to check the value to display a certain content</li>
+    <li><code>*ngSwitchDefault</code> use to display other cases</li>
+  </ul>
+  <li><code>*ngFor="let item of items; index as i"</code> to get the index <a href="https://angular.io/api/common/NgForOf">link</a></li>
+  <ul>
+    <li>use <code>trackBy: trackByIdFn</code> to track items by Ids</li>
+  </ul>
+  <li><code>[ngClass]="&#123;'some-class': boolean&#125;</code></li>
+  <li><code>ng g directive directive-name</code></li>
+</ul>
+<div class="exercise">
+  <four title="Exercise 4: Zippy">
+    <p>Learned: ng-content</p>
+  </four>
+</div>
+<h2>Template-driven Forms</h2>
+<ul>
+  <li><code>ngModel name="controlName"</code> in input template driven aproach</li>
+  <li><code>#templateVar="ngModel"</code> in input reference to this ngModel</li>
+  <li><code>#formName="ngForm"</code> in form to get reference</li>
+  <li><code>(ngSubmit)="submitFn(formName)"</code>onSubmit function</li>
+  <li><code>[ngValue]="object"</code> use to set the value as an object.</li>
+</ul>
+<div class="exercise">
+  <five></five>
+</div>
+<h2>Reactive Forms</h2>
+<ul>
+  <li>(register ReactiveFormsModule): <code><pre>form = new FormGroup(&#123;
+    username: new FormControl()  
+    &#125;)</pre></code></li>
+  <ul>
+    <li><code>[formGroup]="form"</code> add to form tag inside .html</li>
+    <li><code>formControlName="username"</code> add to input tag inside .html</li>
+  </ul>
+  <li>inside formControl add validators: <code>('', Validators.<i>val</i>)</code>(3. param is Async</li>
+  <ul>
+    <li><code>*ngIf="form.get('username').touch"</code>...</li>
+  </ul>
+  <li>create a file with validators(class) and add: 
+    <code><pre>static methodName(control: AbstractControl) : ValidationErrors | null &#123;
+      if(control.value as string).indexOf(' ' >= 0) &#123;
+          return &#123; methodCheck: true &#125;
+        &#125;else return null
+      &#125;</pre></code></li>
+  <li>for async replace with <code>Promise&lt;Validation Errors | null &gt;</code></li>
+  <li>in validator class add: <code>
+    <pre>return new Promise((resolve, reject) => &#123;
+        function that returns resolve(&#123;methodCheck: true&#125;)or else null
+      &#125;);</pre></code></li>
+      <li><code>*ngIf="username.pending"</code> use to display a div while async loading</li>
+</ul>
+<div class="exercise">
+  <six></six>
+</div>
