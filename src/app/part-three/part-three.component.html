@@ -1,0 +1,42 @@
+<h2 class="not-finished">Consuming HTTP Services</h2>
+<h2>Routing and Navigation</h2>
+<ul>
+    <li><code>path: 'name', component: NameComponent</code> add paths to app-routing.module</li>
+    <li>add router-outlet in the html that renders child component</li>
+    <li>use routerLink attribute instead of href in navbars</li>
+    <ul>
+        <li><code>[routerLink]="['pathName', object.id]"</code> use for routes w route params</li>
+        <li>use routerLinkActive attr for adding a class on current view tab</li>
+    </ul>
+    <li><code>private route: ActivatedRoute</code> as a constructor param to access params</li>
+    <ul>
+        <li><code><pre>this.route.paramMap
+            .subscribe(params => &#123;
+                console.log(params)
+                let name = params.get('nameOfParam') - <i>get a certain param</i>
+                &#125;)</pre></code>
+            used in ngOnInit to work on those params</li>
+        <li><code>let id = this.route.snapshot.paramMap.get('name')</code> use for one time visit</li>
+    </ul>
+    <li><code>[queryParams]="&#123; page: 1, order: 'newest' &#125;"</code> pass optional params in html</li>
+    <ul>
+        <li>for receiving add ActivatedRoute as before</li>
+        <li><code>this.route.queryParamMap.subscribe()</code>.... </li>
+    </ul>
+    <li>to combine observables:</li>
+    <ul>
+        <li><code>import &#123; Observable &#125; from 'rxjs/Observable'</code></li>
+        <li><code>import 'rxjs/add/observable/combineLatest'</code></li>
+        <li>in ngOnInit: <code>Observable.combineLatest([<em>array of observables</em>])</code></li>
+        <li><code><pre>.subscribe(combined => &#123; 
+                combined[0].get(<em>something</em>);
+                combined[i].get(...)
+            &#125;</pre></code></li>
+    </ul>
+    <li><code>private router: Router</code> inside constructor param</li>
+    <li>a method with <code>this.router.navigate(['somepath'], &#123; queryParams: &#123;...&#125;&#125;)</code></li>
+    <div class="exercise">
+        <router-outlet></router-outlet>
+    </div>
+    
+</ul>

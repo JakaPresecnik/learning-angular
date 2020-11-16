@@ -18,6 +18,9 @@ import { SixComponent } from './six/six.component';
 import { PartOneComponent } from './part-one/part-one.component';
 import { PartTwoComponent } from './part-two/part-two.component';
 import { ErrorComponent } from './error/error.component';
+import { PartThreeComponent } from './part-three/part-three.component';
+import { EightComponent } from './eight/eight.component';
+import { EightAComponent } from './eight-a/eight-a.component';
 
 const icons = {
   Star,
@@ -40,7 +43,10 @@ const icons = {
     SixComponent,
     PartOneComponent,
     PartTwoComponent,
-    ErrorComponent
+    ErrorComponent,
+    PartThreeComponent,
+    EightComponent,
+    EightAComponent
   ],
   imports: [
     BrowserModule,
